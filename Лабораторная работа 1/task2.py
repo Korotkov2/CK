@@ -7,4 +7,4 @@ page = 100
 book=symv*chars*string_*page
 book=book/(1024*1024)
 books=1.44//book
-print("Количество книг, помещающихся на дискету:", round(books))
+print("Количество книг, помещающихся на дискету:", int(books))
