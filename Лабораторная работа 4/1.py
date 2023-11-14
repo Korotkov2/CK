@@ -2,13 +2,10 @@ import json
 
 def task() -> float:
     filename = 'input.json'
-    with open(filename) as file:
-        data = json.load(file)
-    sum_dict = 0
-    for i in data:
-        a = i['score']
-        b = i['weight']
-        sum_dict += a * b
-    return round(sum_dict, 3)
+    with open(filename) as f:
+        json_data = json.load(f)
+
+    sum_values = sum([item["score"] * item["weight"] for item in json_data])
+    return round(sum_values, 3)
 
 print(task())
