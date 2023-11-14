@@ -9,9 +9,8 @@ OUTPUT_FILENAME = "output.json"
 def task() -> None:
     ...  # TODO считать содержимое csv файла
     with open(INPUT_FILENAME) as f:
-        lines = []
-        for dict in csv.DictReader(f):
-            lines.append(dict)
+        lines = [line for line in csv.DictReader(f)]
+
     ...  # TODO Сериализовать в файл с отступами равными 4
     with open(OUTPUT_FILENAME, "w") as f:
         json.dump(lines, f, indent=4)
